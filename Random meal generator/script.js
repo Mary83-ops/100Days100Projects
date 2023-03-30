@@ -27,9 +27,9 @@ function createMeal(meal) {
 		<div class="row">
 			<div class="columns five">
 				<img src="${meal.strMealThumb}" alt="Meal Image">
-				${meal.strCategory ? `<p><strong>Category:</strong> ${meal.strCategory}</p>` : ''}
-				${meal.strArea ? `<p><strong>Area:</strong> ${meal.strArea}</p>` : ''}
-				${meal.strTags ? `<p><strong>Tags:</strong> ${meal.strTags.split(',').join(', ')}</p>` : ''}
+				<p><strong>Category:</strong> ${meal.strCategory}</p>
+				<p><strong>Area:</strong> ${meal.strArea}</p>
+				<p><strong>Tags:</strong> ${meal.strTags.split(',').join(', ')}</p>
 				<h5>Ingredients:</h5>
 				<ul>
 					${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
@@ -40,7 +40,7 @@ function createMeal(meal) {
 				<p>${meal.strInstructions}</p>
 			</div>
 		</div>
-		${meal.strYoutube ? `
+	
 		<div class="row">
 			<h5>Video Recipe</h5>
 			<div class="videoWrapper">
@@ -48,7 +48,7 @@ function createMeal(meal) {
 				src="https://www.youtube.com/embed/${meal.strYoutube.slice(-11)}">
 				</iframe>
 			</div>
-		</div>` : ''}
+		</div>
 	`;
 	
 	meal_container.innerHTML = newInnerHTML;
